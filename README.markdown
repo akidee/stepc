@@ -69,3 +69,39 @@ Also you can use group with a dynamic number of common tasks.
     );
 
 *Note* that we both call `this.group()` and `group()`.  The first reserves a slot in the parameters of the next step, then calling `group()` generates the individual callbacks and increments the internal counter.
+
+### Ignore returned values
+
+It can be useful to ignore the functions' returned values, especially in JavaScript compiled from CoffeeScript, where the result of the last expression is always returned and will trigger the next step while ignoring callbacks. The way to be sure that all steps are asynchronous is:
+
+    Step.async(
+      function () {
+
+        // This is what the CoffeeScript compiler does
+        return fs.readdir(__dirname, this);
+      },
+      function (err, results) {
+        // ...
+      }
+    )
+
+### Preserve context
+
+To preserve the current context is to pass it to Step() as the first argument. `this` will be the context you provide, your callback is now an additional argument that is passed to every function:
+
+    Step(
+      this,
+      function(e, next) {
+        // You can continue to use `this` here, how you would expect it.
+        doAsync(..., next);
+      },
+      function(e, result, next) {
+        doAsync(..., next.parallel());
+        doAsync(..., next.parallel());
+      },
+      function(e, result1, result2) {
+        // ...
+      }
+    )
+
+`next` can never be the first argument, since, by convention, it points to an error.
