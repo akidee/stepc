@@ -11,7 +11,7 @@ Step.async(
   function readSelf() {
     fulfill("one");
     fs.readFile(__filename, 'utf8', this);
-    throw new Error();
+    return 1;
   },
   function capitalize(err, text) {
     fulfill("two");
