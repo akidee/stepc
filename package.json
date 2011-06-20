@@ -1,7 +1,10 @@
 { "name": "stepc",
   "version": "0.0.3",
-  "description": "A CoffeeScriptable version of creationix' control-flow library for node.js",
-  "engine": [ "node >=0.1.90" ],
-  "author": "Tim Caswell <tim@creationix.com>",
+  "description": "A CoffeeScript-safe version of creationix' step",
+  "url": "http://github.com/akidee/stepc",
+  "engines": {
+    "node": ">=0.2.5"
+  },
+  "author": "Andreas Kalsch",
   "main": "lib/step"
 }
