@@ -2,9 +2,11 @@
 
 A simple control-flow library for node.JS that makes parallel execution, serial execution, and error handling painless.
 
-## How to install
+## Installation
 
-Simply copy or link the lib/step.js file into your `$HOME/.node_libraries` folder.
+```sh
+npm install stepc
+```
 
 ## How to use
 
