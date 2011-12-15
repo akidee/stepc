@@ -1,0 +1,7 @@
+require('./async')
+require('./callbackTest')
+require('./errorTest')
+require('./fnTest')
+require('./groupTest')
+require('./next')
+require('./parallelTest')

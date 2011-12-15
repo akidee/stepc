@@ -23,5 +23,6 @@ Step(
   function (err) {
     fulfill('three');
     assert.equal(exception, err, "error should be caught");
+    console.log('Passed')
   }
 );

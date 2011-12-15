@@ -18,5 +18,6 @@ Step(
     if (err) throw err;
     assert.equal(selfText, code, "Code should come first");
     assert.equal(etcText, users, "Users should come second");
+    console.log('Passed')
   }
 );

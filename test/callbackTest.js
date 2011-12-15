@@ -22,5 +22,6 @@ Step(
     fulfill("three");
     if (err) throw err;
     assert.equal(selfText.toUpperCase(), newText, "Text Uppercased");
+    console.log('Passed')
   }
 );

@@ -18,4 +18,5 @@ myfn(__filename, function (err, result) {
   fulfill('result');
   if (err) throw err;
   assert.equal(selfText.toUpperCase(), result, "It should work");
+  console.log('Passed')
 });

@@ -29,5 +29,6 @@ Step(
     fulfill('three');
     if (err) throw err;
     assert.deepEqual(dirResults, files);
+    console.log('Passed')
   }
 );
